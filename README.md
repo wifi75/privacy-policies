@@ -1,10 +1,19 @@
-# Privacy policies
+# privacy-policies — archivio, non piu' in uso
 
-Informative sulla privacy delle app di Tiziano Cassone, raccolte in un
-unico repository pubblico (richieste da Google Play Console / App Store,
-che vogliono un indirizzo web raggiungibile).
+Le informative privacy delle app **non vivono piu' qui**: sono pubblicate su
 
-- **SuperLOTW** (`com.tizianocassone.superlotw`): <https://wifi75.github.io/privacy-policies/superlotw/>
-- **LumaText FX**: <https://wifi75.github.io/privacy-policies/lumatextfx/>
+- SuperLOTW: <https://privacy.tizianocassone.workers.dev/superlotw>
+- LumaText FX: <https://privacy.tizianocassone.workers.dev/lumatextfx>
+- RistoQR: <https://privacy.tizianocassone.workers.dev/ristoqr>
 
-Ogni app ha la sua sottocartella. Il codice delle app non è qui.
+Il sorgente di quelle pagine sta nel progetto `privacy` (Cloudflare Worker), non
+in questo repository.
+
+Le pagine di questo repo sono state **sostituite da redirect** invece di essere
+cancellate: i link gia' in circolazione (schede store non aggiornate, pagine in
+cache, segnalibri) continuano a funzionare e portano al testo corrente. Lasciarle
+con il contenuto vecchio avrebbe significato tenere in linea due informative
+divergenti per la stessa app, che e' un problema di conformita'.
+
+**Non aggiornare i file qui dentro.** Se serve modificare un'informativa, si
+modifica nel Worker e si ridistribuisce da la'.
