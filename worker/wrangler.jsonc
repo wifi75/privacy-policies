@@ -1,0 +1,7 @@
+{
+  "name": "privacy",
+  "main": "src/index.js",
+  "compatibility_date": "2026-08-23"
+  // I file .html sono importati come testo dal router: se ne occupa la regola
+  // Text predefinita di wrangler, non serve dichiararne una propria.
+}

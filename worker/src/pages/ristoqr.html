@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy · RistoQR</title>
+<meta name="description" content="Informativa sulla privacy di RistoQR: i dati del locale restano sul telefono e sul Google Drive del ristoratore; online va solo il menu che il ristoratore sceglie di pubblicare.">
+<style>
+  :root {
+    --bg: #FBF7F2; --surface: #FFFFFF; --ink: #241A12; --muted: #6F5C4B;
+    --line: #E6DBCD; --accent: #C1592E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14100D; --surface: #1C1713; --ink: #F4ECE3; --muted: #B6A396;
+      --line: #2E251E; --accent: #E2794A;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.65 -apple-system, "Segoe UI", Roboto, system-ui, sans-serif;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 40px 22px 64px; }
+  h1 { font-size: clamp(28px, 6vw, 36px); line-height: 1.15; margin: 0 0 6px; letter-spacing: -0.02em; }
+  .date { color: var(--muted); font-size: 14px; margin: 0 0 28px; }
+  h2 { font-size: 21px; margin: 36px 0 10px; letter-spacing: -0.01em; }
+  h3 { font-size: 17px; margin: 24px 0 6px; }
+  .lead {
+    background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent);
+    border-radius: 12px; padding: 16px 18px; margin: 0 0 28px;
+  }
+  ul, ol { padding-left: 22px; }
+  li { margin: 6px 0; }
+  a { color: var(--accent); }
+  code { background: var(--surface); border: 1px solid var(--line); border-radius: 5px; padding: 1px 5px; font-size: 0.92em; }
+  .table-scroll { overflow-x: auto; margin: 14px 0; }
+  table { border-collapse: collapse; width: 100%; min-width: 460px; font-size: 15px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; }
+  footer { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Informativa sulla privacy — RistoQR</h1>
+<p class="date">Ultimo aggiornamento: 23 agosto 2026</p>
+
+<p class="lead"><strong>In breve:</strong> RistoQR non vende, non profila e non
+traccia nessuno. I dati del tuo locale stanno sul tuo telefono e sul
+<strong>tuo</strong> Google Drive. L'unica cosa che finisce su un nostro server
+è il menu che <strong>scegli tu</strong> di pubblicare — ed è una pagina
+pubblica, fatta apposta perché la legga chiunque inquadri il QR sul tavolo.</p>
+
+<p>Questa informativa vale per l'app <strong>RistoQR</strong>
+(<code>com.tizianocassone.ristoqr</code>) e per le pagine di menu pubblicate
+con essa.</p>
+
+<h2>Chi tratta i dati</h2>
+<p>Titolare del trattamento: <strong>Tiziano Cassone (Nexora Software)</strong>.
+Contatto per qualsiasi richiesta su questa informativa:
+<a href="mailto:tizianocassone@gmail.com">tizianocassone@gmail.com</a>.</p>
+
+<h2>Chi usa l'app, e chi la legge</h2>
+<p>Vanno distinti due ruoli, perché i dati trattati sono diversi:</p>
+<ul>
+  <li>il <strong>ristoratore</strong>, che installa l'app, accede con Google e costruisce il menu;</li>
+  <li>l'<strong>ospite</strong>, che inquadra il QR sul tavolo e apre il menu. L'ospite non installa niente e non gli viene chiesto nessun dato.</li>
+</ul>
+
+<h2>Dati del ristoratore</h2>
+
+<h3>Account Google</h3>
+<p>Per sincronizzare e pubblicare il menu, l'app chiede l'accesso con Google.
+Da lì l'app riceve <strong>nome, indirizzo email, immagine del profilo e
+l'identificativo dell'account</strong>. Servono a due cose: mostrarti con quale
+account sei entrato, e sapere in quale Drive scrivere. Non vengono usati per
+altro e non vengono ceduti a nessuno.</p>
+<p>L'app chiede il permesso Google Drive più stretto possibile
+(<code>drive.file</code>): può vedere e modificare <strong>solo i file che ha
+creato lei</strong>, non il resto del tuo Drive.</p>
+
+<h3>Cosa scrive nel tuo Google Drive</h3>
+<p>Nella cartella <code>RistoQR/</code> del <strong>tuo</strong> Drive: il
+catalogo (piatti, prezzi, categorie) come file JSON, le foto dei piatti e della
+copertina, il menu in PDF e alcune copie di sicurezza. Sono file tuoi, in un
+account tuo: puoi aprirli, copiarli o cancellarli quando vuoi, anche senza
+l'app.</p>
+
+<h3>Cosa resta sul telefono</h3>
+<p>Lo stesso catalogo in un database locale (SQLite), le foto, le copie di
+sicurezza e le tue preferenze. L'app funziona anche senza rete: è il motivo per
+cui i dati stanno prima sul telefono e poi vengono copiati su Drive.</p>
+
+<h3>Cosa finisce sui nostri server</h3>
+<p>Solo se premi <strong>pubblica il menu online</strong>: la pagina del menu
+viene caricata su <strong>Cloudflare R2</strong> e servita da un nostro Worker.
+Dentro quella pagina c'è quello che hai messo nel menu — nome del locale,
+indirizzo, telefono, social, piatti, prezzi, foto — ed è <strong>pubblica per
+definizione</strong>: chiunque conosca l'indirizzo la può aprire, come deve
+essere per un QR sul tavolo. Non metterci dati personali che non vuoi far
+leggere ai clienti.</p>
+<p>Per pubblicare, l'app manda un token di Google che dimostra chi sei; il
+Worker lo verifica presso Google e ne ricava un codice derivato del tuo account
+(hash), che serve solo a decidere in quale cartella scrivere. Non teniamo un
+elenco dei ristoratori, né statistiche di visita delle pagine.</p>
+<p>Ogni pubblicazione riuscita conserva fino a <strong>20 versioni
+precedenti</strong> del menu, così puoi tornare indietro. Restano dove sta la
+pagina pubblicata.</p>
+
+<h3>Abbonamento</h3>
+<p>L'eventuale abbonamento <strong>RistoQR Pro</strong> passa da Google Play e
+da <strong>RevenueCat</strong>, che gestisce lo stato dell'abbonamento. Il
+pagamento lo tratta Google: l'app non vede e non salva mai i dati della tua
+carta.</p>
+
+<h2>Dati dell'ospite che legge il menu</h2>
+<p>Il menu web <strong>non ha cookie, non ha strumenti di analisi, non ha
+pulsanti social che tracciano</strong>. Ricerca, filtro allergeni e cambio
+lingua funzionano dentro la pagina, senza chiedere niente a nessuno: le foto
+sono incorporate nella pagina stessa.</p>
+<p>Due eccezioni, dette per intero:</p>
+<ol>
+  <li><strong>Font da Google.</strong> La pagina carica i caratteri tipografici
+  da <code>fonts.googleapis.com</code>. Per farlo, il browser dell'ospite
+  contatta i server di Google, che in quel momento vedono il suo indirizzo IP.
+  È l'unica richiesta di rete che la pagina fa.</li>
+  <li><strong>Ordina su WhatsApp</strong> (solo se il ristoratore ha attivato
+  la funzione). Il pulsante apre WhatsApp con l'ordine già scritto: il messaggio
+  parte <strong>dall'ospite verso il ristoratore</strong>, e da quel momento
+  vale l'informativa di WhatsApp. Noi non vediamo né conserviamo quell'ordine:
+  non passa da nessun nostro server.</li>
+</ol>
+
+<h2>Con chi condividiamo i dati</h2>
+<p>Con nessuno per scopi commerciali. I soli terzi coinvolti, ognuno per la sua
+parte tecnica:</p>
+<div class="table-scroll">
+<table>
+  <thead><tr><th>Chi</th><th>Perché</th><th>Cosa vede</th></tr></thead>
+  <tbody>
+    <tr><td>Google (Account, Drive)</td><td>accesso e sincronizzazione</td><td>il tuo account e i file che l'app crea nel tuo Drive</td></tr>
+    <tr><td>Cloudflare (Worker, R2)</td><td>ospita il menu pubblicato</td><td>la pagina del menu, e le richieste di chi la apre</td></tr>
+    <tr><td>Google Fonts</td><td>caratteri della pagina del menu</td><td>l'indirizzo IP di chi apre il menu</td></tr>
+    <tr><td>RevenueCat + Google Play</td><td>abbonamento RistoQR Pro</td><td>stato dell'abbonamento, non i dati di pagamento</td></tr>
+    <tr><td>WhatsApp (Meta)</td><td>ordini e contatto diretto, se attivati</td><td>il messaggio che l'ospite invia al ristoratore</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Nessun servizio di analisi statistica, nessuna pubblicità, nessun
+tracciamento fra app e siti diversi.</p>
+
+<h2>Per quanto tempo restano</h2>
+<ul>
+  <li>Sul telefono e sul tuo Drive: <strong>finché li tieni tu</strong>.</li>
+  <li>Il menu pubblicato: finché resta online. Ripubblicandolo si sovrascrive.</li>
+  <li>Le versioni del menu: le ultime 20, le più vecchie si eliminano da sole.</li>
+</ul>
+
+<h2>Cancellare i dati</h2>
+<ul>
+  <li><strong>Sul telefono</strong>: Impostazioni → <em>Elimina account</em>
+  cancella catalogo, menu e impostazioni locali e ti fa uscire dall'account
+  Google.</li>
+  <li><strong>Su Drive</strong>: i file restano nel tuo Drive; puoi eliminarli a
+  mano dalla cartella <code>RistoQR/</code>, e revocare l'accesso di RistoQR
+  dalle impostazioni del tuo account Google.</li>
+  <li><strong>Il menu pubblicato online</strong>: oggi <em>Elimina account</em>
+  <strong>non lo rimuove</strong> — la pagina resta al suo indirizzo. Per farla
+  togliere, scrivi al contatto qui sopra: viene eliminata a mano.</li>
+</ul>
+
+<h2>I tuoi diritti</h2>
+<p>Puoi chiedere quali dati ti riguardano, correggerli, farli cancellare o
+opporti al trattamento, scrivendo al contatto indicato sopra. Poiché la gran
+parte dei dati sta sul tuo dispositivo e nel tuo Drive, quasi sempre puoi farlo
+da solo, senza passare da noi.</p>
+
+<h2>Minori</h2>
+<p>RistoQR è uno strumento di lavoro per esercizi commerciali: non è rivolto a
+minori di 16 anni e non raccoglie consapevolmente dati che li riguardino.</p>
+
+<h2>Modifiche a questa informativa</h2>
+<p>Se cambia qualcosa di sostanziale, cambia la data in cima e la versione
+pubblicata a questo stesso indirizzo.</p>
+
+<footer>RistoQR — ideato e sviluppato da Tiziano Cassone (Nexora Software) ·
+<a href="/">altre informative</a></footer>
+</div>
+</body>
+</html>

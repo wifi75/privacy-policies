@@ -1,0 +1,9 @@
+# I sorgenti del Worker NON vanno pubblicati da GitHub Pages: le pagine
+# servite da questo repo sono soltanto i redirect. Senza questa esclusione
+# `worker/src/pages/superlotw.html` diventerebbe raggiungibile come
+# wifi75.github.io/privacy-policies/worker/src/pages/superlotw.html, cioe' una
+# TERZA copia live della stessa informativa - lo stesso problema di conformita'
+# per cui le pagine di questo repo sono state sostituite da redirect.
+exclude:
+  - worker
+  - .gitignore
