@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>SuperLOTW — Privacy Policy</title>
+<title>SuperLoTW — Privacy Policy</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
@@ -217,14 +217,14 @@
 <div class="wrap">
 
   <!-- ============ ENGLISH ============ -->
-  <span class="badge"><span class="dot"></span>SuperLOTW · Privacy Policy</span>
+  <span class="badge"><span class="dot"></span>SuperLoTW · Privacy Policy</span>
 
-  <h1>How SuperLOTW handles your data</h1>
+  <h1>How SuperLoTW handles your data</h1>
   <p class="subtitle">Short version: your data stays on your phone. There is no server of ours — just your LoTW account and this device.</p>
 
   <div class="meta-row">
-    <span>Valid from version: <b>1.52.0</b></span>
-    <span>Last updated: <b>24 August 2026</b></span>
+    <span>Valid from version: <b>1.64.0</b></span>
+    <span>Last updated: <b>17 September 2026</b></span>
     <span>Controller: <b>Tiziano Cassone</b></span>
   </div>
 
@@ -235,9 +235,10 @@
       <li><a href="#credentials-en">LoTW credentials</a></li>
       <li><a href="#qso-en">QSO/QSL data</a></li>
       <li><a href="#adif-en">ADIF files</a></li>
+      <li><a href="#purchases-en">In-app purchase and trial</a></li>
+      <li><a href="#watch-en">Apple Watch companion app</a></li>
       <li><a href="#permissions-en">Phone permissions</a></li>
       <li><a href="#thirdparty-en">Third-party services</a></li>
-      <li><a href="#pinlock-en">PIN lock</a></li>
       <li><a href="#retention-en">Retention and deletion</a></li>
       <li><a href="#children-en">Children</a></li>
       <li><a href="#changes-en">Changes to this policy</a></li>
@@ -247,7 +248,7 @@
 
   <section id="summary-en">
     <h2>Summary</h2>
-    <p>SuperLOTW is an app for radio amateurs that displays, in a readable form, the QSL confirmations already present on your <strong>ARRL Logbook of The World (LoTW)</strong> account. We don't run a server: the app talks directly to <code>lotw.arrl.org</code> and stores everything on your device.</p>
+    <p>SuperLoTW is an app for radio amateurs that displays, in a readable form, the QSL confirmations already present on your <strong>ARRL Logbook of The World (LoTW)</strong> account. We don't run a server: the app talks directly to <code>lotw.arrl.org</code> and stores everything on your device.</p>
     <div class="callout">
       <p>We <strong>do not collect, sell, or share</strong> your data with anyone. No ads, no tracking, no third-party analytics.</p>
     </div>
@@ -266,9 +267,21 @@
 
   <section id="adif-en">
     <h2>ADIF files</h2>
-    <p>SuperLOTW can import an ADIF file you choose yourself &mdash; either from within the app or by opening a <code>.adi</code> file from a file manager or an email attachment. The file is read on your device only: it is copied into the app's private cache, parsed, and the contacts it contains are stored in the same local database as the rest. Nothing is uploaded anywhere.</p>
+    <p>SuperLoTW can import an ADIF file you choose yourself &mdash; either from within the app or by opening a <code>.adi</code> file from a file manager or an email attachment. The file is read on your device only: it is copied into the app's private cache, parsed, and the contacts it contains are stored in the same local database as the rest. Nothing is uploaded anywhere.</p>
     <p>The app can also export your contacts as an ADIF or CSV file. The export is handed to your system's own share sheet, and where it goes from there is entirely your choice: the app itself never sends it anywhere.</p>
-    <p>SuperLOTW does not browse your storage and does not read files you have not explicitly picked or opened with it.</p>
+    <p>SuperLoTW does not browse your storage and does not read files you have not explicitly picked or opened with it.</p>
+  </section>
+
+  <section id="purchases-en">
+    <h2>In-app purchase and trial</h2>
+    <p>On iOS, SuperLoTW offers a 30-day free trial; after it ends, unlocking the app permanently requires a one-time in-app purchase (not a subscription). The purchase itself is handled entirely by Apple's App Store: we never see your payment details, and the app is only told whether that purchase exists on your account.</p>
+    <p>So that uninstalling and reinstalling the app doesn't restart the trial, the trial's start date is stored on your device, in the iOS Keychain, which survives uninstalls. The unlock status is also cached on the device so the app isn't blocked when you're offline at launch; that cache is always overwritten by whatever the App Store reports as soon as it responds.</p>
+    <p>On Android this purchase isn't available yet: the app remains fully unlocked for everyone, and no purchase or trial data is stored.</p>
+  </section>
+
+  <section id="watch-en">
+    <h2>Apple Watch companion app</h2>
+    <p>If you use an Apple Watch paired with your iPhone, SuperLoTW can show a summary there &mdash; QSO/DXCC counts and your most recently confirmed callsigns. That summary is delivered directly from your iPhone to your own Watch through Apple's WatchConnectivity framework: it never passes through a server of ours, and stays only between devices you own, signed into the same Apple ID.</p>
   </section>
 
   <section id="permissions-en">
@@ -292,14 +305,11 @@
       <li><strong>ARRL Logbook of The World</strong> (<code>lotw.arrl.org</code>) — the only external service the app talks to, to download your confirmations and your DXCC award credits. Your use of LoTW is governed by ARRL's own privacy policy, not this one.</li>
       <li><strong>Your phone's Maps app</strong> — tapping "Open in Maps" on an IOTA reference opens the maps app already on your phone, passing only geographic coordinates: we don't send any data to a mapping service ourselves.</li>
       <li><strong>IOTA data</strong> — names and approximate areas for IOTA (Islands On The Air) groups ship inside the app as a static file, downloaded once from IOTA-World during development: no network calls at runtime to show them.</li>
+      <li><strong>Apple's App Store (StoreKit)</strong> — on iOS, processes the in-app purchase described above. We never see your payment details.</li>
     </ul>
     <p>We don't use any third-party analytics, advertising, or tracking libraries.</p>
   </section>
 
-  <section id="pinlock-en">
-    <h2>PIN lock</h2>
-    <p>If you enable the app lock in Settings, the PIN you choose is stored encrypted, only on the device, using the same mechanism used for your LoTW credentials. We don't know it and can't recover it for you.</p>
-  </section>
 
   <section id="retention-en">
     <h2>Retention and deletion</h2>
@@ -308,7 +318,7 @@
 
   <section id="children-en">
     <h2>Children</h2>
-    <p>SuperLOTW isn't specifically directed at children under 13 and doesn't knowingly collect data from children, consistent with requiring an active LoTW account (an ARRL service reserved for licensed radio amateurs).</p>
+    <p>SuperLoTW isn't specifically directed at children under 13 and doesn't knowingly collect data from children, consistent with requiring an active LoTW account (an ARRL service reserved for licensed radio amateurs).</p>
   </section>
 
   <section id="changes-en">
@@ -324,14 +334,14 @@
   <div class="lang-divider"><span class="line"></span><span>Italiano ↓</span><span class="line"></span></div>
 
   <!-- ============ ITALIANO ============ -->
-  <span class="badge"><span class="dot"></span>SuperLOTW · Informativa Privacy</span>
+  <span class="badge"><span class="dot"></span>SuperLoTW · Informativa Privacy</span>
 
-  <h1>Come SuperLOTW tratta i tuoi dati</h1>
+  <h1>Come SuperLoTW tratta i tuoi dati</h1>
   <p class="subtitle">In breve: i tuoi dati restano sul tuo telefono. Non esiste un server nostro — solo il tuo account LoTW e questo dispositivo.</p>
 
   <div class="meta-row">
-    <span>Valida dalla versione: <b>1.52.0</b></span>
-    <span>Ultimo aggiornamento: <b>24 agosto 2026</b></span>
+    <span>Valida dalla versione: <b>1.64.0</b></span>
+    <span>Ultimo aggiornamento: <b>17 settembre 2026</b></span>
     <span>Titolare: <b>Tiziano Cassone</b></span>
   </div>
 
@@ -342,9 +352,10 @@
       <li><a href="#credenziali">Credenziali LoTW</a></li>
       <li><a href="#dati-qso">Dati QSO/QSL</a></li>
       <li><a href="#file-adif">File ADIF</a></li>
+      <li><a href="#acquisti">Acquisto in-app e periodo di prova</a></li>
+      <li><a href="#watch">App per Apple Watch</a></li>
       <li><a href="#permessi">Permessi del telefono</a></li>
       <li><a href="#terze-parti">Servizi di terze parti</a></li>
-      <li><a href="#blocco-pin">Blocco con PIN</a></li>
       <li><a href="#conservazione">Conservazione e cancellazione</a></li>
       <li><a href="#minori">Minori</a></li>
       <li><a href="#modifiche">Modifiche a questa informativa</a></li>
@@ -354,7 +365,7 @@
 
   <section id="riepilogo">
     <h2>Riepilogo essenziale</h2>
-    <p>SuperLOTW è un'app per radioamatori che mostra in forma leggibile le conferme QSL già presenti sul tuo account <strong>ARRL Logbook of The World (LoTW)</strong>. Non abbiamo un server: l'app parla direttamente con <code>lotw.arrl.org</code> e salva tutto sul tuo dispositivo.</p>
+    <p>SuperLoTW è un'app per radioamatori che mostra in forma leggibile le conferme QSL già presenti sul tuo account <strong>ARRL Logbook of The World (LoTW)</strong>. Non abbiamo un server: l'app parla direttamente con <code>lotw.arrl.org</code> e salva tutto sul tuo dispositivo.</p>
     <div class="callout">
       <p><strong>Non raccogliamo, non vendiamo, non condividiamo</strong> i tuoi dati con nessuno. Nessuna pubblicità, nessun tracciamento, nessun analytics di terze parti.</p>
     </div>
@@ -373,9 +384,21 @@
 
   <section id="file-adif">
     <h2>File ADIF</h2>
-    <p>SuperLOTW pu&ograve; importare un file ADIF che scegli tu, dall'app stessa oppure aprendo un file <code>.adi</code> da un file manager o da un allegato email. Il file viene letto solo sul tuo dispositivo: &egrave; copiato nella cache privata dell'app, analizzato, e i contatti che contiene sono salvati nello stesso database locale del resto. Non viene caricato da nessuna parte.</p>
+    <p>SuperLoTW pu&ograve; importare un file ADIF che scegli tu, dall'app stessa oppure aprendo un file <code>.adi</code> da un file manager o da un allegato email. Il file viene letto solo sul tuo dispositivo: &egrave; copiato nella cache privata dell'app, analizzato, e i contatti che contiene sono salvati nello stesso database locale del resto. Non viene caricato da nessuna parte.</p>
     <p>L'app pu&ograve; anche esportare i tuoi contatti in un file ADIF o CSV. L'esportazione viene consegnata al menu di condivisione del sistema, e dove finisca da l&igrave; in poi &egrave; una scelta tua: l'app di per s&eacute; non lo invia a nessuno.</p>
-    <p>SuperLOTW non esplora la memoria del dispositivo e non legge file che tu non abbia esplicitamente scelto o aperto con l'app.</p>
+    <p>SuperLoTW non esplora la memoria del dispositivo e non legge file che tu non abbia esplicitamente scelto o aperto con l'app.</p>
+  </section>
+
+  <section id="acquisti">
+    <h2>Acquisto in-app e periodo di prova</h2>
+    <p>Su iOS, SuperLoTW offre 30 giorni di prova gratuita; al termine, sbloccare l'app in modo permanente richiede un acquisto in-app una tantum (non un abbonamento). L'acquisto è gestito interamente dall'App Store di Apple: non vediamo mai i tuoi dati di pagamento, e all'app viene detto solo se quell'acquisto risulta presente sul tuo account.</p>
+    <p>Perché disinstallare e reinstallare l'app non faccia ripartire la prova da zero, la data di inizio prova viene salvata sul dispositivo, nel Keychain di iOS, che sopravvive alla disinstallazione. Anche lo stato di sblocco viene tenuto in cache sul dispositivo, per non bloccare l'app quando si è offline all'avvio; quella cache viene sempre riscritta con quanto riporta l'App Store non appena risponde.</p>
+    <p>Su Android questo acquisto non è ancora disponibile: l'app resta completamente sbloccata per tutti, e non viene salvato alcun dato di acquisto o di prova.</p>
+  </section>
+
+  <section id="watch">
+    <h2>App per Apple Watch</h2>
+    <p>Se usi un Apple Watch associato al tuo iPhone, SuperLoTW può mostrarti lì un riepilogo &mdash; conteggi di QSO/DXCC e gli ultimi nominativi confermati. Quel riepilogo viene consegnato direttamente dal tuo iPhone al tuo orologio tramite il framework WatchConnectivity di Apple: non passa mai da un server nostro, e resta solo fra dispositivi tuoi, collegati allo stesso ID Apple.</p>
   </section>
 
   <section id="permessi">
@@ -399,14 +422,11 @@
       <li><strong>ARRL Logbook of The World</strong> (<code>lotw.arrl.org</code>) — l'unico servizio esterno con cui l'app comunica, per scaricare le tue conferme e i tuoi crediti award DXCC. L'uso di LoTW è regolato dall'informativa privacy di ARRL, non da questa.</li>
       <li><strong>App Mappe del telefono</strong> — toccando "Apri in Mappe" su un riferimento IOTA, apriamo l'app di mappe già presente sul tuo telefono passando solo delle coordinate geografiche: non inviamo nessun dato a servizi di mappe da parte nostra.</li>
       <li><strong>Dati IOTA</strong> — i nomi e le aree geografiche dei gruppi IOTA (Islands On The Air) sono inclusi nell'app come file statico, scaricati una volta da IOTA-World in fase di sviluppo: nessuna chiamata di rete a runtime per mostrarli.</li>
+      <li><strong>App Store di Apple (StoreKit)</strong> — su iOS, elabora l'acquisto in-app descritto sopra. Non vediamo mai i tuoi dati di pagamento.</li>
     </ul>
     <p>Non usiamo librerie di analisi, pubblicità o tracciamento di terze parti.</p>
   </section>
 
-  <section id="blocco-pin">
-    <h2>Blocco con PIN</h2>
-    <p>Se attivi il blocco app in Impostazioni, il PIN scelto viene salvato cifrato solo sul dispositivo, con lo stesso meccanismo usato per le credenziali LoTW. Non lo conosciamo e non possiamo recuperarlo per te.</p>
-  </section>
 
   <section id="conservazione">
     <h2>Conservazione e cancellazione dei dati</h2>
@@ -415,7 +435,7 @@
 
   <section id="minori">
     <h2>Minori</h2>
-    <p>SuperLOTW non è rivolta specificamente a minori di 13 anni e non raccoglie consapevolmente dati di minori, coerentemente con il fatto che richiede un account LoTW attivo (un servizio ARRL riservato ai titolari di licenza radioamatoriale).</p>
+    <p>SuperLoTW non è rivolta specificamente a minori di 13 anni e non raccoglie consapevolmente dati di minori, coerentemente con il fatto che richiede un account LoTW attivo (un servizio ARRL riservato ai titolari di licenza radioamatoriale).</p>
   </section>
 
   <section id="modifiche">
@@ -429,7 +449,7 @@
   </section>
 
   <footer>
-    <span>SuperLOTW — independent app, not affiliated with ARRL</span>
+    <span>SuperLoTW — independent app, not affiliated with ARRL</span>
     <span>© 2026 Tiziano Cassone</span>
   </footer>
 </div>
