@@ -220,11 +220,11 @@
   <span class="badge"><span class="dot"></span>SuperLoTW · Privacy Policy</span>
 
   <h1>How SuperLoTW handles your data</h1>
-  <p class="subtitle">Short version: your data stays on your phone. There is no server of ours — just the logbook services you choose to connect and this device.</p>
+  <p class="subtitle">Short version: your data stays on your phone. There is no server of ours — just your LoTW account and this device.</p>
 
   <div class="meta-row">
-    <span>Valid from version: <b>1.73.0</b></span>
-    <span>Last updated: <b>17 September 2026</b></span>
+    <span>Valid from version: <b>1.73.2</b></span>
+    <span>Last updated: <b>8 October 2026</b></span>
     <span>Controller: <b>Tiziano Cassone</b></span>
   </div>
 
@@ -233,7 +233,6 @@
     <ol>
       <li><a href="#summary-en">Summary</a></li>
       <li><a href="#credentials-en">LoTW credentials</a></li>
-      <li><a href="#eqsl-en">eQSL.cc account and cards</a></li>
       <li><a href="#qso-en">QSO/QSL data</a></li>
       <li><a href="#adif-en">ADIF files</a></li>
       <li><a href="#purchases-en">In-app purchase and trial</a></li>
@@ -249,7 +248,7 @@
 
   <section id="summary-en">
     <h2>Summary</h2>
-    <p>SuperLoTW is an app for radio amateurs that displays, in a readable form, the QSL confirmations already present on your <strong>ARRL Logbook of The World (LoTW)</strong> account, and &mdash; since version 1.73.0, if you choose to connect it &mdash; on your <strong>eQSL.cc</strong> account. We don't run a server: the app talks directly to <code>lotw.arrl.org</code> and <code>eQSL.cc</code>, and stores everything on your device.</p>
+    <p>SuperLoTW is an app for radio amateurs that displays, in a readable form, the QSL confirmations already present on your <strong>ARRL Logbook of The World (LoTW)</strong> account. We don't run a server: the app talks directly to <code>lotw.arrl.org</code> and stores everything on your device.</p>
     <div class="callout">
       <p>We <strong>do not collect, sell, or share</strong> your data with anyone. No ads, no tracking, no third-party analytics.</p>
     </div>
@@ -260,23 +259,16 @@
     <p>Your LoTW callsign and password are stored <strong>only on your device</strong>, encrypted through the operating system's own security (Android Keystore on Android, Keychain on iOS). We never send them to a server of ours: their only use is direct authentication, over an encrypted (HTTPS) connection, with ARRL's servers (<code>lotw.arrl.org</code>) to download your confirmations.</p>
   </section>
 
-  <section id="eqsl-en">
-    <h2>eQSL.cc account and cards</h2>
-    <p>Connecting <strong>eQSL.cc</strong> is optional: without it, nothing in this section applies and the app behaves exactly as before. eQSL is a second confirmation service, and the reason to connect it is that it carries <strong>the picture of the QSL card</strong>, which LoTW does not send.</p>
-    <p>Your eQSL callsign and password are stored <strong>only on your device</strong>, encrypted through the operating system's own security (Android Keystore on Android, Keychain on iOS), exactly like your LoTW credentials. They are sent, over an encrypted (HTTPS) connection, only to <code>eQSL.cc</code>, and only to download your own confirmations and cards. They are never sent to a server of ours, because there isn't one. They always travel in the body of the request, never in the address: the service also accepts them in the address, and that is how real users' passwords end up indexed by search engines.</p>
-    <p>You can connect <strong>more than one callsign</strong>: on eQSL each callsign is a separate account, so radio amateurs who have held different callsigns over the years have one account each. Each one is stored the same way, and you can remove any of them at any time from Settings.</p>
-    <p>The card images downloaded for your contacts are saved in the app's own private folder on the device, so you can look at them offline and they don't have to be downloaded again. They never leave the phone, and they are deleted when you uninstall the app.</p>
-  </section>
-
   <section id="qso-en">
     <h2>QSO/QSL data</h2>
-    <p>Radio contacts (QSOs) and their confirmations (QSLs) downloaded from LoTW &mdash; and, if you connected it, from eQSL &mdash; are stored in a local database on your phone, so you can browse them offline too. This data never leaves the device: it is never uploaded to any server, ours or anyone else's.</p>
+    <p>Radio contacts (QSOs) and their confirmations (QSLs) downloaded from LoTW are stored in a local database on your phone, so you can browse them offline too. This data never leaves the device: it is never uploaded to any server, ours or anyone else's.</p>
     <p>From version 1.44.0 the same synchronisation also reads your <strong>DXCC award credits</strong> from LoTW, which is where credits for paper QSL cards checked by a card checker live. It is a second request to the same ARRL service, with the same credentials, and the result is stored locally exactly like the rest.</p>
   </section>
 
   <section id="adif-en">
     <h2>ADIF files</h2>
     <p>SuperLoTW can import an ADIF file you choose yourself &mdash; either from within the app or by opening a <code>.adi</code> file from a file manager or an email attachment. The file is read on your device only: it is copied into the app's private cache, parsed, and the contacts it contains are stored in the same local database as the rest. Nothing is uploaded anywhere.</p>
+    <p>You can also <strong>link</strong> one ADIF file, for example one kept in a folder your computer syncs through Google Drive or OneDrive. The app then keeps permission to read that single file again later &mdash; when you pull down to sync, and when it starts &mdash; and checks whether it has changed before importing it, looking at its modification date and, if needed, its content. Reading goes through your phone's own file access: SuperLoTW does not sign in to Google Drive or OneDrive and does not talk to their servers. The linked file stays where it is, nothing is uploaded, and you can unlink it at any time in Settings, after which the app stops reading it.</p>
     <p>The app can also export your contacts as an ADIF or CSV file. The export is handed to your system's own share sheet, and where it goes from there is entirely your choice: the app itself never sends it anywhere.</p>
     <p>SuperLoTW does not browse your storage and does not read files you have not explicitly picked or opened with it.</p>
   </section>
@@ -299,10 +291,11 @@
       <table>
         <thead><tr><th>Permission</th><th>Why it's needed</th></tr></thead>
         <tbody>
-          <tr><td>Internet</td><td>Download confirmations from your LoTW account, and from eQSL if you connect it</td></tr>
+          <tr><td>Internet</td><td>Download confirmations from your LoTW account</td></tr>
           <tr><td>Notifications</td><td>Let you know when new QSLs are confirmed (can be turned off in Settings)</td></tr>
           <tr><td>Foreground service</td><td>Keep a manual sync from being interrupted if the screen turns off mid-download</td></tr>
           <tr><td>Run at device startup</td><td>Restore the periodic new-QSL check, if you've enabled it</td></tr>
+          <tr><td>Ignore battery optimisation (optional)</td><td>Lets the periodic new-QSL check run on phones that stop background apps aggressively. It is asked only if you tap the button in Settings, and you can say no</td></tr>
         </tbody>
       </table>
     </div>
@@ -312,7 +305,6 @@
     <h2>Third-party services</h2>
     <ul>
       <li><strong>ARRL Logbook of The World</strong> (<code>lotw.arrl.org</code>) — the only external service the app talks to, to download your confirmations and your DXCC award credits. Your use of LoTW is governed by ARRL's own privacy policy, not this one.</li>
-      <li><strong>eQSL.cc</strong> (<code>eQSL.cc</code>) &mdash; only if you connect it, to download your own confirmations and the card images for your contacts. Your use of eQSL is governed by eQSL.cc's own privacy policy, not this one.</li>
       <li><strong>Your phone's Maps app</strong> — tapping "Open in Maps" on an IOTA reference opens the maps app already on your phone, passing only geographic coordinates: we don't send any data to a mapping service ourselves.</li>
       <li><strong>IOTA data</strong> — names and approximate areas for IOTA (Islands On The Air) groups ship inside the app as a static file, downloaded once from IOTA-World during development: no network calls at runtime to show them.</li>
       <li><strong>Apple's App Store (StoreKit)</strong> — on iOS, processes the in-app purchase described above. We never see your payment details.</li>
@@ -323,7 +315,7 @@
 
   <section id="retention-en">
     <h2>Retention and deletion</h2>
-    <p>All data stays on the device until you remove it. You can delete it at any time with "Sign out" in the app menu: credentials, downloaded QSOs, and preferences are deleted immediately. Disconnecting eQSL removes its credentials but keeps the cards already downloaded, which are your own collection; uninstalling the app deletes everything, cards included.</p>
+    <p>All data stays on the device until you remove it. You can delete it at any time with "Sign out" in the app menu: credentials, downloaded QSOs, and preferences are deleted immediately. Uninstalling the app has the same effect.</p>
   </section>
 
   <section id="children-en">
@@ -350,8 +342,8 @@
   <p class="subtitle">In breve: i tuoi dati restano sul tuo telefono. Non esiste un server nostro — solo il tuo account LoTW e questo dispositivo.</p>
 
   <div class="meta-row">
-    <span>Valida dalla versione: <b>1.64.0</b></span>
-    <span>Ultimo aggiornamento: <b>17 settembre 2026</b></span>
+    <span>Valida dalla versione: <b>1.73.2</b></span>
+    <span>Ultimo aggiornamento: <b>8 ottobre 2026</b></span>
     <span>Titolare: <b>Tiziano Cassone</b></span>
   </div>
 
@@ -395,6 +387,7 @@
   <section id="file-adif">
     <h2>File ADIF</h2>
     <p>SuperLoTW pu&ograve; importare un file ADIF che scegli tu, dall'app stessa oppure aprendo un file <code>.adi</code> da un file manager o da un allegato email. Il file viene letto solo sul tuo dispositivo: &egrave; copiato nella cache privata dell'app, analizzato, e i contatti che contiene sono salvati nello stesso database locale del resto. Non viene caricato da nessuna parte.</p>
+    <p>Puoi anche <strong>collegare</strong> un file ADIF, per esempio uno tenuto in una cartella che il computer sincronizza tramite Google Drive o OneDrive. L'app conserva allora il permesso di rileggere quel solo file in seguito &mdash; quando trascini per sincronizzare e all'avvio &mdash; e controlla se &egrave; cambiato prima di importarlo, guardando la data di modifica e, se serve, il contenuto. La lettura passa dall'accesso ai file del tuo telefono: SuperLoTW non accede a Google Drive n&eacute; a OneDrive e non comunica con i loro server. Il file collegato resta dov'&egrave;, non viene caricato da nessuna parte, e puoi scollegarlo in qualsiasi momento da Impostazioni: da quel momento l'app smette di leggerlo.</p>
     <p>L'app pu&ograve; anche esportare i tuoi contatti in un file ADIF o CSV. L'esportazione viene consegnata al menu di condivisione del sistema, e dove finisca da l&igrave; in poi &egrave; una scelta tua: l'app di per s&eacute; non lo invia a nessuno.</p>
     <p>SuperLoTW non esplora la memoria del dispositivo e non legge file che tu non abbia esplicitamente scelto o aperto con l'app.</p>
   </section>
@@ -421,6 +414,7 @@
           <tr><td>Notifiche</td><td>Avvisarti quando arrivano nuove QSL confermate (disattivabile in Impostazioni)</td></tr>
           <tr><td>Servizio in primo piano</td><td>Evitare che la sincronizzazione si interrompa se lo schermo si spegne durante un aggiornamento manuale</td></tr>
           <tr><td>Avvio al riavvio del telefono</td><td>Ripristinare il controllo periodico delle nuove QSL, se lo hai attivato</td></tr>
+          <tr><td>Ignora l'ottimizzazione della batteria (facoltativo)</td><td>Permette al controllo periodico delle nuove QSL di girare sui telefoni che fermano le app in background in modo aggressivo. Viene chiesto solo se tocchi il pulsante in Impostazioni, e puoi rifiutare</td></tr>
         </tbody>
       </table>
     </div>
